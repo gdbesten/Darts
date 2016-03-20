@@ -5,7 +5,7 @@ namespace Darts.ViewPresenter
 {
     public class DartsFormPresenter : IDartsFormPresenter
     {
-        private IDartsFormView _view { get; set; }
+        private readonly IDartsFormView _view;
         private Player _player1;
         private Player _player2;
         private int _turn;
@@ -96,22 +96,21 @@ namespace Darts.ViewPresenter
                 return;
             }
             _view.ClearScore();
-
         }
 
         private bool ValidScoreText(string scoreText, int totalScore)
         {
-            var inputOK = false;
-            var score = 0;
+            var inputOk = false;
+            int score;
             if (int.TryParse(scoreText, out score))
             {
                 if (totalScore - score < 0)
-                    inputOK = true;
+                    inputOk = true;
                 if (score > 180)
-                    inputOK = false;
+                    inputOk = false;
             }
 
-            return inputOK;
+            return inputOk;
         }
     }
 }

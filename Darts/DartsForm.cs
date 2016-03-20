@@ -96,7 +96,7 @@ namespace Darts
 
         public void ClearScore()
         {
-            textEditPlayer1.Text = "";
+            textEditScore.Text = "";
         }
     }
 }
