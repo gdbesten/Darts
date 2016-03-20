@@ -4,8 +4,8 @@ namespace Darts.Model
 {
     public class Player
     {
-        public string Name { get; set; }
-        public List<Score> ScoreList { get; set; } 
+        public string Name { private get; set; }
+        public List<Score> ScoreList { get; private set; } 
 
         public Player(string name)
         {

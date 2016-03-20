@@ -14,14 +14,12 @@ namespace Darts
         public DartsForm()
         {
             InitializeComponent();
-
         }
 
         private void DartsForm_Load(object sender, EventArgs e)
         {
             DartsFormPresenter = new DartsFormPresenter(this);
             DartsFormPresenter.StartNewGame(textEditPlayer1.Text, textEditPlayer2.Text);
-
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
@@ -58,7 +56,6 @@ namespace Darts
         {
             textEditPlayer1.Text = score.ToString();
             gridControlPlayer1.Refresh();
-
         }
 
         public void SetScoreListPlayer2(IList<Score> scoreList)
@@ -86,7 +83,6 @@ namespace Darts
         public void RemoveScoreToPlayerList1(Score lastScore)
         {
             bindingSourcePlayer1.Remove(lastScore);
-            
         }
 
         public void RemoveScoreToPlayerList2(Score lastScore)
