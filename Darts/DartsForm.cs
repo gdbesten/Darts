@@ -81,18 +81,22 @@ namespace Darts
         public void AddScoreToPlayerList2(Score score)
         {
             bindingSourcePlayer2.Add(score);
-            textEditScore.Text = "";
         }
 
         public void RemoveScoreToPlayerList1(Score lastScore)
         {
             bindingSourcePlayer1.Remove(lastScore);
-            textEditPlayer1.Text = "";
+            
         }
 
         public void RemoveScoreToPlayerList2(Score lastScore)
         {
             bindingSourcePlayer2.Remove(lastScore);
+        }
+
+        public void ClearScore()
+        {
+            textEditPlayer1.Text = "";
         }
     }
 }

@@ -13,5 +13,6 @@ namespace Darts.ViewPresenter
         void AddScoreToPlayerList2(Score score);
         void RemoveScoreToPlayerList1(Score lastItem);
         void RemoveScoreToPlayerList2(Score lastItem);
+        void ClearScore();
     }
 }

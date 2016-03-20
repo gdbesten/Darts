@@ -68,19 +68,20 @@ namespace Darts.ViewPresenter
             if (string.IsNullOrWhiteSpace(scoreText))
                 return;
 
-            if (_turn == 1)
+            if (_turn == 1 && ValidScoreText(scoreText, _player1.ScoreList.Sum(x => x.Points)))
             {
                 var score = new Score
-                    {
-                        SequenceNumber = _player1.ScoreList.Count + 1,
-                        Points = int.Parse(scoreText)
-                    };
+                {
+                    SequenceNumber = _player1.ScoreList.Count + 1,
+                    Points = int.Parse(scoreText)
+                };
                 _view.AddScoreToPlayerList1(score);
                 _view.SetScorePlayer1(501 - _player1.ScoreList.Sum(x => x.Points));
+                _view.ClearScore();
                 _turn = 2;
                 return;
             }
-            if (_turn == 2)
+            if (_turn == 2 && ValidScoreText(scoreText, _player2.ScoreList.Sum(x => x.Points)))
             {
                 var score =
                     new Score
@@ -90,8 +91,27 @@ namespace Darts.ViewPresenter
                     };
                 _view.AddScoreToPlayerList2(score);
                 _view.SetScorePlayer2(501 - _player2.ScoreList.Sum(x => x.Points));
+                _view.ClearScore();
                 _turn = 1;
+                return;
             }
+            _view.ClearScore();
+
+        }
+
+        private bool ValidScoreText(string scoreText, int totalScore)
+        {
+            var inputOK = false;
+            var score = 0;
+            if (int.TryParse(scoreText, out score))
+            {
+                if (totalScore - score < 0)
+                    inputOK = true;
+                if (score > 180)
+                    inputOK = false;
+            }
+
+            return inputOK;
         }
     }
 }
