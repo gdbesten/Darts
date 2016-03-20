@@ -1,4 +1,6 @@
-﻿namespace Darts
+﻿using Darts.Model;
+
+namespace Darts
 {
     partial class DartsForm
     {
@@ -182,7 +184,7 @@
             // 
             // bindingSourcePlayer2
             // 
-            this.bindingSourcePlayer2.DataSource = typeof(Darts.Score);
+            this.bindingSourcePlayer2.DataSource = typeof(Score);
             // 
             // gridView2
             // 
@@ -219,7 +221,7 @@
             // 
             // bindingSourcePlayer1
             // 
-            this.bindingSourcePlayer1.DataSource = typeof(Darts.Score);
+            this.bindingSourcePlayer1.DataSource = typeof(Score);
             // 
             // gridView1
             // 

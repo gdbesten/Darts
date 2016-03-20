@@ -1,4 +1,4 @@
-﻿namespace Darts
+﻿namespace Darts.Model
 {
     public class Score
     {

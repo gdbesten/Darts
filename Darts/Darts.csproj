@@ -62,10 +62,13 @@
     <Compile Include="DartsForm.Designer.cs">
       <DependentUpon>DartsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs" />
+    <Compile Include="Model\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Score.cs" />
+    <Compile Include="Model\Score.cs" />
+    <Compile Include="ViewPresenter\DartsFormPresenter.cs" />
+    <Compile Include="ViewPresenter\IDartsFormPresenter.cs" />
+    <Compile Include="ViewPresenter\IDartsFormView.cs" />
     <EmbeddedResource Include="DartsForm.resx">
       <DependentUpon>DartsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +96,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

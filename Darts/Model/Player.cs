@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Darts
+namespace Darts.Model
 {
     public class Player
     {
