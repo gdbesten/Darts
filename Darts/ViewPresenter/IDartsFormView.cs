@@ -14,5 +14,7 @@ namespace Darts.ViewPresenter
         void RemoveScoreToPlayerList1(Score lastItem);
         void RemoveScoreToPlayerList2(Score lastItem);
         void ClearScore();
+        void HighestAveragePlayer1(int highest, int average);
+        void HighestAveragePlayer2(int highest, int average);
     }
 }

@@ -94,5 +94,15 @@ namespace Darts
         {
             textEditScore.Text = "";
         }
+
+        public void HighestAveragePlayer1(int highest, int average)
+        {
+            textEditHighestAvarage1.Text = $"{highest} / {average}";
+        }
+
+        public void HighestAveragePlayer2(int highest, int average)
+        {
+            textEditHighestAvarage2.Text = $"{highest} / {average}";
+        }
     }
 }

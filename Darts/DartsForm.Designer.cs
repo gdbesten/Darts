@@ -46,6 +46,8 @@ namespace Darts
             this.gridControlPlayer1 = new DevExpress.XtraGrid.GridControl();
             this.bindingSourcePlayer1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colSequenceNumber = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPoints = new DevExpress.XtraGrid.Columns.GridColumn();
             this.textEditPlayer2 = new DevExpress.XtraEditors.TextEdit();
             this.textEditPlayer1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -59,8 +61,10 @@ namespace Darts
             this.layoutControlItemName1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemName2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colSequenceNumber = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPoints = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEditHighestAvarage1 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItemHighestAverage1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEditHighestAvarage2 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItemHighestAverage2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -85,10 +89,16 @@ namespace Darts
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemName1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemName2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHighestAvarage1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHighestAverage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHighestAvarage2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHighestAverage2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textEditHighestAvarage2);
+            this.layoutControl1.Controls.Add(this.textEditHighestAvarage1);
             this.layoutControl1.Controls.Add(this.simpleButtonNew);
             this.layoutControl1.Controls.Add(this.textEdit2);
             this.layoutControl1.Controls.Add(this.textEdit1);
@@ -163,11 +173,11 @@ namespace Darts
             // 
             // textEditScore
             // 
-            this.textEditScore.Location = new System.Drawing.Point(42, 437);
+            this.textEditScore.Location = new System.Drawing.Point(96, 437);
             this.textEditScore.Name = "textEditScore";
             this.textEditScore.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEditScore.Properties.Appearance.Options.UseFont = true;
-            this.textEditScore.Size = new System.Drawing.Size(393, 46);
+            this.textEditScore.Size = new System.Drawing.Size(339, 46);
             this.textEditScore.StyleController = this.layoutControl1;
             this.textEditScore.TabIndex = 8;
             // 
@@ -177,14 +187,14 @@ namespace Darts
             this.gridControlPlayer2.Location = new System.Drawing.Point(439, 150);
             this.gridControlPlayer2.MainView = this.gridView2;
             this.gridControlPlayer2.Name = "gridControlPlayer2";
-            this.gridControlPlayer2.Size = new System.Drawing.Size(423, 283);
+            this.gridControlPlayer2.Size = new System.Drawing.Size(423, 233);
             this.gridControlPlayer2.TabIndex = 7;
             this.gridControlPlayer2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // bindingSourcePlayer2
             // 
-            this.bindingSourcePlayer2.DataSource = typeof(Score);
+            this.bindingSourcePlayer2.DataSource = typeof(Darts.Model.Score);
             // 
             // gridView2
             // 
@@ -214,14 +224,14 @@ namespace Darts
             this.gridControlPlayer1.Location = new System.Drawing.Point(12, 150);
             this.gridControlPlayer1.MainView = this.gridView1;
             this.gridControlPlayer1.Name = "gridControlPlayer1";
-            this.gridControlPlayer1.Size = new System.Drawing.Size(423, 283);
+            this.gridControlPlayer1.Size = new System.Drawing.Size(423, 233);
             this.gridControlPlayer1.TabIndex = 6;
             this.gridControlPlayer1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // bindingSourcePlayer1
             // 
-            this.bindingSourcePlayer1.DataSource = typeof(Score);
+            this.bindingSourcePlayer1.DataSource = typeof(Darts.Model.Score);
             // 
             // gridView1
             // 
@@ -230,6 +240,20 @@ namespace Darts
             this.colPoints});
             this.gridView1.GridControl = this.gridControlPlayer1;
             this.gridView1.Name = "gridView1";
+            // 
+            // colSequenceNumber
+            // 
+            this.colSequenceNumber.FieldName = "SequenceNumber";
+            this.colSequenceNumber.Name = "colSequenceNumber";
+            this.colSequenceNumber.Visible = true;
+            this.colSequenceNumber.VisibleIndex = 0;
+            // 
+            // colPoints
+            // 
+            this.colPoints.FieldName = "Points";
+            this.colPoints.Name = "colPoints";
+            this.colPoints.Visible = true;
+            this.colPoints.VisibleIndex = 1;
             // 
             // textEditPlayer2
             // 
@@ -267,7 +291,9 @@ namespace Darts
             this.layoutControlItem4,
             this.layoutControlItemName1,
             this.layoutControlItemName2,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItemHighestAverage1,
+            this.layoutControlItemHighestAverage2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(874, 495);
@@ -289,7 +315,7 @@ namespace Darts
             this.layoutControlItem1.Control = this.gridControlPlayer1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 138);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(427, 287);
+            this.layoutControlItem1.Size = new System.Drawing.Size(427, 237);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -309,7 +335,7 @@ namespace Darts
             this.layoutControlItem2.Control = this.gridControlPlayer2;
             this.layoutControlItem2.Location = new System.Drawing.Point(427, 138);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(427, 287);
+            this.layoutControlItem2.Size = new System.Drawing.Size(427, 237);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -320,7 +346,7 @@ namespace Darts
             this.layoutControlItemScore.Name = "layoutControlItemScore";
             this.layoutControlItemScore.Size = new System.Drawing.Size(427, 50);
             this.layoutControlItemScore.Text = "Score";
-            this.layoutControlItemScore.TextSize = new System.Drawing.Size(27, 13);
+            this.layoutControlItemScore.TextSize = new System.Drawing.Size(81, 13);
             // 
             // layoutControlItem3
             // 
@@ -373,19 +399,45 @@ namespace Darts
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // colSequenceNumber
+            // textEditHighestAvarage1
             // 
-            this.colSequenceNumber.FieldName = "SequenceNumber";
-            this.colSequenceNumber.Name = "colSequenceNumber";
-            this.colSequenceNumber.Visible = true;
-            this.colSequenceNumber.VisibleIndex = 0;
+            this.textEditHighestAvarage1.Location = new System.Drawing.Point(96, 387);
+            this.textEditHighestAvarage1.Name = "textEditHighestAvarage1";
+            this.textEditHighestAvarage1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditHighestAvarage1.Properties.Appearance.Options.UseFont = true;
+            this.textEditHighestAvarage1.Size = new System.Drawing.Size(339, 46);
+            this.textEditHighestAvarage1.StyleController = this.layoutControl1;
+            this.textEditHighestAvarage1.TabIndex = 14;
             // 
-            // colPoints
+            // layoutControlItemHighestAverage1
             // 
-            this.colPoints.FieldName = "Points";
-            this.colPoints.Name = "colPoints";
-            this.colPoints.Visible = true;
-            this.colPoints.VisibleIndex = 1;
+            this.layoutControlItemHighestAverage1.Control = this.textEditHighestAvarage1;
+            this.layoutControlItemHighestAverage1.CustomizationFormText = "Highest/Avarage";
+            this.layoutControlItemHighestAverage1.Location = new System.Drawing.Point(0, 375);
+            this.layoutControlItemHighestAverage1.Name = "layoutControlItemHighestAverage1";
+            this.layoutControlItemHighestAverage1.Size = new System.Drawing.Size(427, 50);
+            this.layoutControlItemHighestAverage1.Text = "Highest/Avarage";
+            this.layoutControlItemHighestAverage1.TextSize = new System.Drawing.Size(81, 13);
+            // 
+            // textEditHighestAvarage2
+            // 
+            this.textEditHighestAvarage2.Location = new System.Drawing.Point(523, 387);
+            this.textEditHighestAvarage2.Name = "textEditHighestAvarage2";
+            this.textEditHighestAvarage2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditHighestAvarage2.Properties.Appearance.Options.UseFont = true;
+            this.textEditHighestAvarage2.Size = new System.Drawing.Size(339, 46);
+            this.textEditHighestAvarage2.StyleController = this.layoutControl1;
+            this.textEditHighestAvarage2.TabIndex = 15;
+            // 
+            // layoutControlItemHighestAverage2
+            // 
+            this.layoutControlItemHighestAverage2.Control = this.textEditHighestAvarage2;
+            this.layoutControlItemHighestAverage2.CustomizationFormText = "Highest/Avarage";
+            this.layoutControlItemHighestAverage2.Location = new System.Drawing.Point(427, 375);
+            this.layoutControlItemHighestAverage2.Name = "layoutControlItemHighestAverage2";
+            this.layoutControlItemHighestAverage2.Size = new System.Drawing.Size(427, 50);
+            this.layoutControlItemHighestAverage2.Text = "Highest/Avarage";
+            this.layoutControlItemHighestAverage2.TextSize = new System.Drawing.Size(81, 13);
             // 
             // DartsForm
             // 
@@ -420,6 +472,10 @@ namespace Darts
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemName1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemName2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHighestAvarage1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHighestAverage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHighestAvarage2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHighestAverage2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,6 +511,10 @@ namespace Darts
         private DevExpress.XtraGrid.Columns.GridColumn colPoints1;
         private DevExpress.XtraGrid.Columns.GridColumn colSequenceNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colPoints;
+        private DevExpress.XtraEditors.TextEdit textEditHighestAvarage2;
+        private DevExpress.XtraEditors.TextEdit textEditHighestAvarage1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemHighestAverage1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemHighestAverage2;
     }
 }
 
