@@ -8,6 +8,7 @@ namespace Darts
 {
     public partial class DartsForm : Form, IDartsFormView
     {
+        private string _formattableString;
         private IDartsFormPresenter DartsFormPresenter { get; set; }
 
 
@@ -97,12 +98,14 @@ namespace Darts
 
         public void HighestAveragePlayer1(int highest, int average)
         {
-            textEditHighestAvarage1.Text = $"{highest} / {average}";
+            _formattableString = $"{highest} / {average}";
+            textEditHighestAvarage1.Text = _formattableString;
         }
 
         public void HighestAveragePlayer2(int highest, int average)
         {
-            textEditHighestAvarage2.Text = $"{highest} / {average}";
+            _formattableString = $"{highest} / {average}";
+            textEditHighestAvarage2.Text = _formattableString;
         }
     }
 }

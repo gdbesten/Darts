@@ -24,6 +24,8 @@ namespace Darts.ViewPresenter
             _view.SetScorePlayer1(501);
             _view.SetScoreListPlayer2(_player2.ScoreList);
             _view.SetScorePlayer2(501);
+            _view.HighestAveragePlayer1(0, 0);
+            _view.HighestAveragePlayer2(0, 0);
 
             _turn = 1;
         }
@@ -64,6 +66,8 @@ namespace Darts.ViewPresenter
             _view.SetScorePlayer1(501 - sum);
             _view.HighestAveragePlayer1(highest, average);
         }
+
+
         private void RemoveLastEntryPlayer2()
         {
             int highest;
