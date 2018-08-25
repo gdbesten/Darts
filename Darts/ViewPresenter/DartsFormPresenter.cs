@@ -55,14 +55,12 @@ namespace Darts.ViewPresenter
 
         private void RemoveLastEntryPlayer1()
         {
-            int highest;
-            int average;
             if (_player1.ScoreList.Any())
             {
                 var lastItem = _player1.ScoreList.Last();
                 _view.RemoveScoreToPlayerList1(lastItem);
             }
-            var sum = SumHighestAndAverage(_player1, out highest, out average);
+            var sum = SumHighestAndAverage(_player1, out var highest, out var average);
             _view.SetScorePlayer1(501 - sum);
             _view.HighestAveragePlayer1(highest, average);
         }
@@ -70,15 +68,13 @@ namespace Darts.ViewPresenter
 
         private void RemoveLastEntryPlayer2()
         {
-            int highest;
-            int average;
             if (_player2.ScoreList.Any())
             {
                 var lastItem = _player2.ScoreList.Last();
                 _view.RemoveScoreToPlayerList2(lastItem);
             }
             _view.SetScorePlayer1(501 - _player2.ScoreList.Sum(x => x.Points));
-            var sum = SumHighestAndAverage(_player2, out highest, out average);
+            var sum = SumHighestAndAverage(_player2, out var highest, out var average);
             _view.SetScorePlayer2(501 - sum);
             _view.HighestAveragePlayer2(highest, average);
         }
@@ -136,14 +132,11 @@ namespace Darts.ViewPresenter
         private bool ValidScoreText(string scoreText, int totalScore)
         {
             var inputOk = false;
-            int score;
-            if (int.TryParse(scoreText, out score))
-            {
-                if (totalScore + score <= 501)
-                    inputOk = true;
-                if (score > 180)
-                    inputOk = false;
-            }
+            if (!int.TryParse(scoreText, out var score)) return false;
+            if (totalScore + score <= 501)
+                inputOk = true;
+            if (score > 180)
+                inputOk = false;
 
             return inputOk;
         }
