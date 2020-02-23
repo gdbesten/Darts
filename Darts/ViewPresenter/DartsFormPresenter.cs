@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using Darts.Model;
+﻿using Darts.Model;
+using System.Linq;
 
 namespace Darts.ViewPresenter
 {
