@@ -20,7 +20,7 @@ namespace Darts
         private void DartsForm_Load(object sender, EventArgs e)
         {
             DartsFormPresenter = new DartsFormPresenter(this);
-            DartsFormPresenter.StartNewGame(textEditPlayer1.Text, textEditPlayer2.Text);
+            DartsFormPresenter.StartNewGame(textEdit1.Text, textEdit2.Text);
         }
 
         private void textEdit1_EditValueChanged(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace Darts
 
         private void simpleButtonNew_Click(object sender, EventArgs e)
         {
-            DartsFormPresenter.StartNewGame(textEditPlayer1.Text, textEditPlayer2.Text);
+            DartsFormPresenter.StartNewGame(textEdit1.Text, textEdit2.Text);
         }
 
         private void simpleButtonCancel_Click(object sender, EventArgs e)
@@ -106,6 +106,16 @@ namespace Darts
         {
             _formattableString = $"{highest} / {average}";
             textEditHighestAvarage2.Text = _formattableString;
+        }
+
+        public void SetPlayer1Name(string playerName)
+        {
+            textEdit1.Text = playerName;
+        }
+
+        public void SetPlayer2Name(string playerName)
+        {
+            textEdit2.Text = playerName;
         }
     }
 }
