@@ -20,6 +20,9 @@ namespace Darts.ViewPresenter
             _player1 = new Player(namePlayer1);
             _player2 = new Player(namePlayer2);
 
+            _view.SetPlayer1Name(_player1.GetPlayerName());
+            _view.SetPlayer2Name(_player2.GetPlayerName());
+
             _view.SetScoreListPlayer1(_player1.ScoreList);
             _view.SetScorePlayer1(501);
             _view.SetScoreListPlayer2(_player2.ScoreList);
@@ -32,10 +35,12 @@ namespace Darts.ViewPresenter
 
         public void ChangeNamePlayer1(string namePlayer)
         {
+            _player1.SetPlayerName(namePlayer);
         }
 
         public void ChangeNamePlayer2(string namePlayer)
         {
+            _player2.SetPlayerName(namePlayer);
         }
 
         public void CancelLastScore()

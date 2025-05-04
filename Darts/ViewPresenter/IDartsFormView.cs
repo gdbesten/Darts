@@ -16,5 +16,7 @@ namespace Darts.ViewPresenter
         void ClearScore();
         void HighestAveragePlayer1(int highest, int average);
         void HighestAveragePlayer2(int highest, int average);
+        void SetPlayer1Name(string playerName);
+        void SetPlayer2Name(string playerName);
     }
 }
